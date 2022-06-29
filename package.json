@@ -2,7 +2,7 @@
   "name": "for-never-home",
   "version": "0.0.0",
   "scripts": {
-    "start": "node app.vue",
+    "start": "node app",
     "dev": "vite",
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
