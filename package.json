@@ -2,12 +2,13 @@
   "name": "for-never-home",
   "version": "0.0.0",
   "scripts": {
-    "start": "node app",
+    "start": "vue-cli-service serve",
     "dev": "vite",
-    "build": "run-p type-check build-only",
+    "build": "vue-cli-service build",
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit"
+    "type-check": "vue-tsc --noEmit",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "vue": "^3.2.37"
