@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 import Add from './components/Add.vue'
+import axios from 'axios'
 
 let pets = ref([])
 let newPet = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
