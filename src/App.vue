@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import Add from './components/Add.vue'
+// import Add from './components/Add.vue'
 import axios from 'axios'
 
 // let pets = ref([])
@@ -21,13 +21,13 @@ import axios from 'axios'
 </script>
 
 <template>
-  <header>
+  <!-- <header>
     <h1>For-Never Home</h1>
     <button @click="addView">Memorialize Your Pet</button>
   </header>
-  <div class="add-form">
-    <Add :newPet="newPet" :handleCreate="handleCreate"/>
-  </div>
+  <div class="add-form"> -->
+    <!-- <Add :newPet="newPet" :handleCreate="handleCreate"/>
+  </div> -->
 
 </template>
 
