@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <form @submit.prevent="handleCreate">
     <label htmlFor="name">Name</label>
     <input v-model="newPet.name" type="text"><br/>
@@ -28,4 +28,4 @@ export default {
 </script>
 
 <style>
-</style>
+</style> -->
