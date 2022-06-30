@@ -3,9 +3,10 @@ import {ref, onMounted } from 'vue'
 import Add from './components/Add.vue'
 import axios from 'axios'
 
+type NewPet = { name: string; species: string; image: string; owner: string; notes: string; thoughts: string; }
 
 let pets = ref([])
-let newPet: { name: string; species: string; image: string; owner: string; notes: string; thoughts: string; } = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
+let newPet: NewPet = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
 let view = ref('main')
 
 const addView = () => {
