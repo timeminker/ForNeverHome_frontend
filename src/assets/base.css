@@ -6,7 +6,7 @@
 body {
   min-height: 100vh;
   color: white;
-  background: url(../public/whitby-abbey-3790661_1280.jpg);
+  background: url(https://i.ibb.co/FzGp7V3/whitby-abbey-3790661-1280-1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -28,6 +28,20 @@ header {
 
 .container {
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 50px;
+}
+
+.card {
+  background: rgb(10, 10, 10, .50);
+  border-radius: 0px 15px 0px 15px;
+  text-align: center;
+  padding: 10px;
 }
 
 .add-form {
@@ -50,4 +64,13 @@ input[type=text], select {
   border-radius: 25px;
   box-sizing: border-box;
   background: ghostwhite;
+}
+
+img {
+  float: left;
+  width:  300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0px 15px 0px 15px;
+  padding-bottom: 20px;
 }
