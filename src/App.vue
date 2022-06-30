@@ -5,8 +5,8 @@ import axios from 'axios'
 
 // let pets = ref([])
 // let newPet = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
-// let view = ref('main')
-//
+let view = ref('main')
+
 const addView = () => {
   view.value = 'add'
 }
