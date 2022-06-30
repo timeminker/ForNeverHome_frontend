@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import {ref} from 'vue'
+import {ref, onMounted } from 'vue'
 import Add from './components/Add.vue'
 import axios from 'axios'
 
+
 let pets = ref([])
-let newPet = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
+let newPet: { name: string; species: string; image: string; owner: string; notes: string; thoughts: string; } = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
 let view = ref('main')
 
 const addView = () => {
@@ -35,7 +36,7 @@ const handleUpdate = (petID) => {
   })
 }
 
-const handleDelete = (petID) => {
+const handleDelete = (petID: number) => {
   axios.delete('https://forneverhome-backend.herokuapp.com/api/pets/' + petID)
   .then((response) => {
     pets.value = pets.value.filter(pet => pet.id !== petID)
