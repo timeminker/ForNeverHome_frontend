@@ -7,9 +7,9 @@ import axios from 'axios'
 // let newPet = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
 // let view = ref('main')
 //
-// const addView = () => {
-//   view.value = 'add'
-// }
+const addView = () => {
+  view.value = 'add'
+}
 //
 // const handleCreate = () => {
 //   axios.post('https://forneverhome-backend.herokuapp.com/api/pets', newPet.value)
@@ -21,13 +21,13 @@ import axios from 'axios'
 </script>
 
 <template>
-  <!-- <header>
+  <header>
     <h1>For-Never Home</h1>
     <button @click="addView">Memorialize Your Pet</button>
   </header>
   <div class="add-form"> -->
-    <!-- <Add :newPet="newPet" :handleCreate="handleCreate"/>
-  </div> -->
+    <!-- <Add :newPet="newPet" :handleCreate="handleCreate"/> -->
+  </div>
 
 </template>
 
