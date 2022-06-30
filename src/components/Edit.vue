@@ -10,8 +10,8 @@ export default {
 </script>
 
 <template>
-  <h2>Edit Page</h2>
   <details>
+    <summary>Edit</summary>
     <form @submit.prevent="handleUpdate(pet.id)">
       <input v-model="editPet.name" type="text">
       <input v-model="editPet.species" type="text">

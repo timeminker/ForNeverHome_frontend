@@ -11,10 +11,26 @@ let newPet = ref({name: '', species: '', image: '', owner: '', notes: '', though
 let editPet = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
 let view = ref('main')
 
+let filterResults = ref([])
+// let foundDogs = ref([])
+// let foundCats = ref([])
+// let foundReptiles = ref([])
+
+// view functions
 const addView = () => {
   view.value = 'add'
 }
+const mainView = () => {
+  view.value = 'main'
+}
 
+// filtering function by animal
+const filter = (animal) => {
+  filterResults.value = pets.value.filter(pet => pet.species === animal)
+  view.value = 'filter'
+}
+
+// CRUD API functions
 onMounted(() => {
   axios.get('https://forneverhome-backend.herokuapp.com/api/pets')
   .then((response) =>{ pets.value = response.data
@@ -51,17 +67,32 @@ const handleDelete = (petID: number) => {
 <template>
   <header>
     <h1>For-Never Home</h1>
-    <button @click="addView">Memorialize Your Pet</button>
   </header>
-  <div class="add-form"> -->
+  <main v-if="view == 'main'">
+    <button @click="addView">Memorialize Your Pet</button>
+    <button @click="filter('Dog')">Show Dogs</button>
+    <button @click="filter('Cat')">Show Cats</button>
+    <button @click="filter('Reptile')">Show Reptiles</button>
+    <div class="container">
+      <div v-for="pet in pets" :key="pet.id" class="card">
+        <Show :pet="pet"/>
+        <Edit :pet="pet" :editPet="editPet" :handleUpdate="handleUpdate"/>
+        <button @click="handleDelete(pet.id)">Delete</button>
+      </div>
+    </div>
+
+  </main>
+  <div class="add-form" v-if="view == 'add'">
+    <button @click="mainView">Return to Hall Of Rememeberance</button>
     <Add :newPet="newPet" :handleCreate="handleCreate"/>
   </div>
-  <div v-for="pet in pets" :key="pet.id">
-    <Show :pet="pet"/>
-    <Edit :pet="pet" :editPet="editPet" :handleUpdate="handleUpdate"/>
-    <button @click="handleDelete(pet.id)">Delete</button>
-  </div>
-
+  <section v-if="view == 'filter'">
+    <div v-for="animal in filterResults" :key="animal.id">
+      <p>{{animal.name}}, a go od {{animal.species}}</p>
+      <p>owned by {{animal.owner}}</p>
+    </div>
+    <button @click="mainView">Return to Hall Of Rememeberance</button>
+  </section>
 </template>
 
 <style>

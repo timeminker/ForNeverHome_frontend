@@ -5,7 +5,7 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
+  color: white;
   background: url(../public/whitby-abbey-3790661_1280.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,7 +13,7 @@ body {
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: helloGhost;
-  font-size: 15px;
+  font-size: 25px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -24,6 +24,10 @@ header {
   font-size: 50px;
   text-align: center;
   padding-top: 20px;
+}
+
+.container {
+  display: flex;
 }
 
 .add-form {
@@ -46,5 +50,4 @@ input[type=text], select {
   border-radius: 25px;
   box-sizing: border-box;
   background: ghostwhite;
-
 }
