@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import {ref, onMounted } from 'vue'
 import Add from './components/Add.vue'
+import Show from './components/Show.vue'
+import Edit from './components/Edit.vue'
 import axios from 'axios'
 
-type NewPet = { name: string; species: string; image: string; owner: string; notes: string; thoughts: string; }
 
 let pets = ref([])
-let newPet: NewPet = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
+let newPet = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
+let editPet = ref({name: '', species: '', image: '', owner: '', notes: '', thoughts: ''})
 let view = ref('main')
 
 const addView = () => {
@@ -53,6 +55,11 @@ const handleDelete = (petID: number) => {
   </header>
   <div class="add-form"> -->
     <Add :newPet="newPet" :handleCreate="handleCreate"/>
+  </div>
+  <div v-for="pet in pets" :key="pet.id">
+    <Show :pet="pet"/>
+    <Edit :pet="pet" :editPet="editPet" :handleUpdate="handleUpdate"/>
+    <button @click="handleDelete(pet.id)">Delete</button>
   </div>
 
 </template>
